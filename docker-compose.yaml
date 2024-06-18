@@ -1,0 +1,17 @@
+services:
+  my-ubuntu:
+    image: ubuntu:24.04
+    ports:
+      - 20080:80
+      - 25000:5000
+      - 28080:8080
+      - 24200:4200
+    volumes:
+      - ./my-ubuntu:/home/my-ubuntu
+      - /var/run/docker.sock:/var/run/docker.sock
+    cap_add:
+      - NET_ADMIN
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
