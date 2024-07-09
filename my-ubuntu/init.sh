@@ -5,6 +5,19 @@ python3 python3-pip golang
 # Installing rust
 curl https://sh.rustup.rs -sSf | sh
 
+# Installing java and maven
+cd /root
+wget https://download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_linux-x64_bin.tar.gz
+tar xzf openjdk-22.0.1_linux-x64_bin.tar.gz
+mv jdk-22.0.1 /opt
+ln -s /opt/jdk-22.0.1/bin/java /usr/local/bin/java
+ln -s /opt/jdk-22.0.1/bin/javac /usr/local/bin/javac
+ln -s /opt/jdk-22.0.1/bin/jar /usr/local/bin/jar
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz
+tar xzf apache-maven-3.9.8-bin.tar.gz
+mv apache-maven-3.9.8 /opt
+ln -s /opt/apache-maven-3.9.8/bin/mvn /usr/local/bin/mvn
 
 # Installing needed python packages
 pip install -r requirements.txt --break-system-packages
